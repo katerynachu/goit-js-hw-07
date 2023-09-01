@@ -22,9 +22,11 @@ function handleClick(event) {
     if (clickedImage) {
     const imageSource = clickedImage.dataset.source;
 
-   modalImage = basicLightbox.create(`
+    modalImage = basicLightbox.create(`
       <img src="${imageSource}" alt="${clickedImage.alt}" width="800" height="600" />
-    `);
+    `,{
+  closable: true,
+});
         modalImage.show();
 
    document.addEventListener('keydown', handlePress);
